@@ -1,0 +1,8 @@
+<div class="fuel">
+  <div [ngClass]="{ selectedFuel: service.FuelType == 'Gasóleo' }" (click)="service.FuelType = 'Gasóleo'" data-cy="fuel-diesel">
+    <img src="../../../assets/img/fuel_diesel.png" />
+  </div>
+  <div [ngClass]="{ selectedFuel: service.FuelType == 'Gasolina' }" (click)="service.FuelType = 'Gasolina'" data-cy="fuel-95">
+    <img src="../../../assets/img/fuel_95.png" />
+  </div>
+</div>

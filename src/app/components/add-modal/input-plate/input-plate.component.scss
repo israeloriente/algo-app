@@ -1,0 +1,44 @@
+input {
+  width: 300px;
+  height: 50px;
+  border: none;
+  margin-top: 15px;
+  background-color: transparent;
+  text-align: center;
+  outline: none;
+  font-size: 45px;
+}
+input:focus {
+  outline: none;
+}
+
+div {
+  ion-button {
+    --background-hover: transparent;
+    --color-activated: rgb(255, 255, 255);
+    --background-activated: transparent;
+    font-weight: bold;
+  }
+  text-align: center;
+  margin-top: 5%;
+}
+hr {
+  margin: 1px;
+}
+
+@media (max-height: 500px) {
+  div {
+    margin-top: 2px;
+  }
+  input {
+    height: 30px;
+    font-size: 35px;
+    margin-top: 5px;
+  }
+  #lastService {
+    display: none;
+  }
+}
+.input-plate{
+  margin-top: 5px;
+}

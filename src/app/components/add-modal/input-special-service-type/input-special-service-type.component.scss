@@ -1,0 +1,21 @@
+ion-list {
+  height: 71vh;
+  overflow-y: scroll;
+  ion-item {
+    color: rgb(40, 40, 40);
+    ion-label {
+      font-weight: normal;
+    }
+  }
+  .selected {
+    color: rgb(0, 0, 0);
+    ion-label {
+      font-weight: 650;
+    }
+  }
+}
+
+ion-header {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

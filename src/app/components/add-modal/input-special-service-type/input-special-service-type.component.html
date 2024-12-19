@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-no-padding">Escolha o tipo de serviço</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-list data-cy="list-type-washed-service">
+  <ion-item
+    *ngFor="let item of specialServiceType; index as i"
+    (click)="selectSpecialServiceType(item.Id)"
+    button="true"
+    [ngClass]="{ selected: service.SpecialServiceTypeId == item?.Id }"
+    [attr.data-cy]="'item-type-washed-' + i"
+  >
+    <ion-label>{{ item.Label }}</ion-label>
+  </ion-item>
+  <ion-label *ngIf="specialServiceType.length == 0">Lista vazia</ion-label>
+  <ion-button *ngIf="!specialServiceType.length" fill="outline" (click)="ngAfterViewInit()" class="centralizeTotal">Recarregar Listagem</ion-button>
+</ion-list>

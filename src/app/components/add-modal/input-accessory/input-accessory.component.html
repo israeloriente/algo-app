@@ -1,0 +1,18 @@
+<p (click)="enableAll()">Verificação de acessórios</p>
+<ion-list>
+  <ion-item>
+    <ion-toggle mode="ios" [(ngModel)]="service.CarAccessory.chapeleira" data-cy="input-acessorio-1">CHAPELEIRA</ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-toggle mode="ios" [(ngModel)]="service.CarAccessory.palaSol" data-cy="input-acessorio-2">PALA DO SOL</ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-toggle mode="ios" [(ngModel)]="service.CarAccessory.pneuSuplente" data-cy="input-acessorio-3">PNEU SUPLENTE</ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-toggle mode="ios" [(ngModel)]="service.CarAccessory.triangulo" data-cy="input-acessorio-4">TRIANGULO</ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-toggle mode="ios" [(ngModel)]="service.CarAccessory.macaco" data-cy="input-acessorio-5">MACACO</ion-toggle>
+  </ion-item>
+</ion-list>

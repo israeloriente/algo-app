@@ -1,0 +1,24 @@
+ion-label {
+  font-weight: bold;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e1d1d;
+}
+.litro {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1e1d1d;
+  span {
+    font-size: 1rem;
+  }
+}

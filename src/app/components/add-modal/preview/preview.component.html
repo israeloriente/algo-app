@@ -1,0 +1,48 @@
+<ion-card>
+  <div class="container">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" class="ion-align-items-start">
+          <ion-row>
+            <ion-label class="text-title">Matrícula</ion-label>
+            <ion-label class="text-value">{{service.Plate ? service.Plate : "-"}}</ion-label>
+          </ion-row>
+          <ion-row *ngIf="isMovement">
+            <ion-label class="text-title">Combustível</ion-label>
+            <ion-label class="text-value">{{service.FuelLevel}}/8</ion-label>
+          </ion-row>
+          <ion-row *ngIf="isMovement">
+            <ion-label class="text-title">Acessórios</ion-label>
+            <ion-label class="text-value">{{carAccessoryIsAllMarked ? "✅" : "⚠️"}}</ion-label>
+          </ion-row>
+          <ion-row *ngIf="isFuel">
+            <ion-label class="text-title">Litros</ion-label>
+            <ion-label class="text-value">{{service.FuelQuantity}}</ion-label>
+          </ion-row>
+          <ion-row *ngIf="isFuel">
+            <ion-label class="text-title">Combustível</ion-label>
+            <ion-label class="text-value">{{service.FuelType}}</ion-label>
+          </ion-row>
+          <ion-row *ngIf="isPark">
+            <ion-label class="text-title">Local</ion-label>
+            <ion-label class="text-value">{{service.place ? service.place : "-"}}</ion-label>
+          </ion-row>
+        </ion-col>
+        <ion-col size="6" class="ion-align-items-end">
+          <ion-row>
+            <ion-label class="text-title">Responsável</ion-label>
+            <ion-label class="text-value absposition">{{service.Chef}}</ion-label>
+          </ion-row>
+          <ion-row>
+            <ion-label class="text-title">Criado ás</ion-label>
+            <ion-label class="text-value absposition">{{service.CreatedOnDate | date: "HH:mm (dd/MM)"}}</ion-label>
+          </ion-row>
+          <ion-row *ngIf="isMovement">
+            <ion-label class="text-title">Km</ion-label>
+            <ion-label class="text-value">{{service.Km}}</ion-label>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-card>

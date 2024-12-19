@@ -1,0 +1,42 @@
+.titleLabel {
+  color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.54);
+  font-size: 0.9rem;
+  margin-right: 10px;
+}
+ion-item {
+  ion-icon {
+    height: 50%;
+    color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.54);
+  }
+}
+ion-col {
+  padding: 0%;
+  margin: 0%;
+  ion-card {
+    padding: 1%;
+    margin: 3%;
+    max-height: 17vh;
+    .flag_new {
+      position: absolute;
+      top: 5%;
+      right: 5%;
+    }
+    p {
+      text-align: center;
+      margin-top: 5px;
+    }
+    ion-icon {
+      display: block;
+      margin: auto;
+      font-size: 12vh;
+      width: 40%;
+      text-align: center;
+    }
+  }
+
+  .disabled {
+    opacity: 0.5;
+  }
+}
+
+// style="background-color: #ecf0f1"

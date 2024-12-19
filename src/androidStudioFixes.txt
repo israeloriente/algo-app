@@ -1,0 +1,4 @@
+Config when generate a new Android Capacitor
+
+bugs:
+- replacing import androidx.core.content.FileProvider;

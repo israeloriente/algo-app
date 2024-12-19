@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">logiface</string>
+    <string name="title_activity_main">logiface</string>
+    <string name="package_name">ino.orientech.carroface</string>
+    <string name="custom_url_scheme">ino.orientech.carroface</string>
+</resources>

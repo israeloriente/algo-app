@@ -1,0 +1,27 @@
+<ion-content>
+  <div style="height: 79vh">
+    <ion-content>
+      <ion-text *ngIf="!list.length" class="centralizeTotal">Nenhum histórico recente!</ion-text>
+      <ion-item-sliding *ngFor="let t of list; let i = index">
+        <ion-item (click)="openAddPlateModal(t)" [attr.data-cy]="'item-list-service-' + i">
+          <ion-avatar slot="start">
+            <img src="../../assets/img/carLogo.png" *ngIf="t.className != 'SpecialService'" />
+            <img src="../../../assets/icon/specialService.svg" style="border-radius: 0px" *ngIf="t.className == 'SpecialService'" />
+          </ion-avatar>
+          <ion-label>
+            <h1>{{ t.Plate || t.SpecialServiceTypeName }}</h1>
+            <h4>{{ t.CreatedOnDate | date : "HH:mm" }} &nbsp; {{ t.ClientName || "" }}</h4>
+          </ion-label>
+          <div slot="end">
+            <ion-badge color="warning" *ngIf="t.Status != 0">Em andamento</ion-badge>
+            <ion-badge slot="start" color="success" *ngIf="t.Status == 0">Realizado</ion-badge>
+          </div>
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option color="danger" expandable (click)="delete(t, i)"> Delete </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+      <br /><br /><br /><br /><br />
+    </ion-content>
+  </div>
+</ion-content>

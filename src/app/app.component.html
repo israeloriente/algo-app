@@ -1,0 +1,56 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-header>
+        <ion-toolbar>
+          <img src="../assets/gif/loading.gif" style="width: 30px; float: left; margin: 1vh" alt="" />
+          <ion-text class="centralizeTotal"
+            >Logiface v{{ versionApp }} <span *ngIf="isDebug">debug</span><span *ngIf="isStaging">staging</span></ion-text
+          >
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-avatar style="margin: 3vh auto; width: 20vh; height: 20vh; background: #ffffff; padding: 3%">
+          <img src="../assets/icon/user.svg" alt="" />
+        </ion-avatar>
+
+        <br /><br />
+        <ion-item class="smallItens">
+          <ion-label>Nome</ion-label>
+          <ion-text>{{ getUser.DisplayName }}</ion-text>
+        </ion-item>
+        <ion-item class="smallItens">
+          <ion-label>Email</ion-label>
+          <ion-text>{{ getUser.Email }}</ion-text>
+        </ion-item>
+        <ion-item class="smallItens">
+          <ion-label>Telemóvel</ion-label>
+          <ion-text>{{ getUser.MobileNumber }}</ion-text>
+        </ion-item>
+        <ion-item class="smallItens">
+          <ion-label>Zona</ion-label>
+          <ion-text>{{ getUser.Zone?.Name }}</ion-text>
+        </ion-item>
+        <br />
+        <ion-menu-toggle auto-hide="false">
+          <ion-item [routerDirection]="'forward'" [routerLink]="'/home'">
+            <ion-icon name="grid-outline" slot="start"></ion-icon>
+            <ion-label>Menu</ion-label>
+          </ion-item>
+          <ion-item (click)="sync()">
+            <ion-icon slot="start" name="sync-outline"></ion-icon>
+            <ion-label>Atualizar Dados</ion-label>
+          </ion-item>
+          <ion-item (click)="updateApp()">
+            <ion-icon slot="start" name="sync-outline"></ion-icon>
+            <ion-label>Recarregar Aplicação</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-content>
+      <ion-footer class="ion-padding">
+        <ion-button fill="outline" expand="block" color="danger" (click)="logout()">Encerrar Sessão </ion-button>
+      </ion-footer>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

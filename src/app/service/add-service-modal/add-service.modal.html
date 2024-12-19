@@ -1,0 +1,45 @@
+<ion-content>
+  <ion-scroll zooming="true" direction="xy">
+    <div class="bottom-div">
+      <app-preview [service]="service" style="height: 200px; height: 50px"></app-preview>
+      <swiper-container #swiper (slidechange)="slidechange($event)" [ngClass]="{'none': !isEditing}">
+        <swiper-slide *ngFor="let page of pages; let slideIndex = index">
+          <div class="slide-content">
+            <ng-container
+              *ngFor="let component of page.components;"
+              [ngComponentOutlet]="component"
+              [ngComponentOutletInjector]="injectableServices[slideIndex]"
+            ></ng-container>
+          </div>
+        </swiper-slide>
+      </swiper-container>
+    </div>
+  </ion-scroll>
+</ion-content>
+
+<ion-footer *ngIf="isMoving">
+  <ion-button expand="block" (click)="frontendStatus = 'editing'">Editar</ion-button>
+  <ion-button color="success" expand="block" [disabled]="!isValid || isSendingPhoto" (click)="finish()">Finalizar</ion-button>
+</ion-footer>
+
+<!-- FAB -->
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="isEditing">
+  <ion-fab-button (click)="slideNext()" *ngIf="!isEnd" [disabled]="!isValid">
+    <ion-icon name="arrow-forward-outline" data-cy="btn-add-service-slide-next"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+<ion-fab vertical="bottom" horizontal="start" slot="fixed" *ngIf="isEditing">
+  <ion-fab-button (click)="slidePrev()" *ngIf="slideIndex" data-cy="btn-add-service-slide-prev">
+    <ion-icon name="arrow-back-outline" data-cy="arrow_prev"></ion-icon>
+  </ion-fab-button>
+
+  <ion-fab-button (click)="closeModal()" *ngIf="!slideIndex" color="danger">
+    <ion-icon name="close-outline" data-cy="cancel"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="isEnd">
+  <ion-fab-button (click)="closeModal()" color="danger">
+    <ion-icon name="close-outline" data-cy="cancel"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

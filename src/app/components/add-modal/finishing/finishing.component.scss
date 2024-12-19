@@ -1,0 +1,30 @@
+.content {
+  ion-label {
+    font-weight: bold;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1e1d1d;
+  }
+  .km {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1e1d1d;
+    span {
+      font-size: 1rem;
+    }
+  }
+}
+
+ion-spinner {
+  --color: #54dc98;
+  padding-right: 50px;
+}
+
+ion-footer {
+  border-top: none;          /* Remove a borda superior */
+  box-shadow: none;          /* Remove qualquer sombra */
+  background-color: inherit; /* Ajuste para a cor desejada */
+}

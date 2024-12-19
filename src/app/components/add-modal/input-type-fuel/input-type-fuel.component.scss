@@ -1,0 +1,21 @@
+.fuel {
+  display: inline-block;
+  div {
+    border-radius: 100px;
+    width: 48%;
+    margin: 1%;
+    padding: 0%;
+    float: left;
+    background: rgba(255, 255, 255, 0);
+    img {
+      padding: 5%;
+      opacity: 0.3;
+    }
+  }
+}
+
+.selectedFuel {
+  img {
+    opacity: 1 !important;
+  }
+}

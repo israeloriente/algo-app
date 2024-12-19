@@ -1,0 +1,43 @@
+<div class="content">
+  <ion-item>
+    <ion-input
+      #chef
+      [(ngModel)]="service.Chef"
+      data-cy="input-finishing-condutor"
+      type="text"
+      clearInput="true"
+      placeholder="João Pedro"
+      label="Condutor"
+    ></ion-input>
+  </ion-item>
+  <input-description [service]="service"></input-description>
+  <app-timer *ngIf="isMov"></app-timer>
+  <ion-list *ngIf="isMov">
+    <ion-item>
+      <ion-label>Partida às:</ion-label>
+      <div slot="end">{{ (service.StartDate | date : "HH:mm:ss") || "Não definido" }}</div>
+    </ion-item>
+    <ion-item>
+      <ion-label>Chegada às:</ion-label>
+      <div slot="end">{{ (service.EndDate | date : "HH:mm:ss") || "Não definido" }}</div>
+    </ion-item>
+  </ion-list>
+
+  <!-- Buttons -->
+  <ion-footer style="position: absolute; bottom: 70px; width: 96%">
+    <ion-button *ngIf="isMov && !service.StartDate" fill="outline" expand="block" (click)="startService()"> INICIAR </ion-button>
+    <ion-button
+      *ngIf="!isMov || service.StartDate"
+      expand="block"
+      (click)="endService()"
+      [disabled]="!isValid || isSendingPhoto"
+      data-cy="bt-finishing-finalize"
+    >
+      <ion-spinner *ngIf="isSendingPhoto"></ion-spinner>
+      <span *ngIf="!isSendingPhoto">
+        {{ pageStatus != 0 ? "INICIAR" : "FINALIZAR" }}
+      </span>
+      <span *ngIf="isSendingPhoto"> Enviando dados... </span>
+    </ion-button>
+  </ion-footer>
+</div>

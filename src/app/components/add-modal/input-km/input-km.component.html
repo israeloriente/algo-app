@@ -1,0 +1,3 @@
+<p class="title">Qual a quilometragem atual?</p>
+<p class="km" data-cy="p-km-km">{{ service.Km }}<span>Km</span></p>
+<app-keyboard data-cy="keyboard-km" style="bottom: 0" #keyboardComponent (onClick)="setNumber($event)" [keyboard]="'numbers'" />

@@ -1,0 +1,14 @@
+<div>
+  <ion-row *ngFor="let row of _keyboard">
+    <ion-col class="ion-no-padding" *ngFor="let key of row" (click)="click(key)">
+      <ion-button mode="ios" expand="block" [class]="getClass()" color="medium" [attr.data-cy]="'btn-keyboard-' + (key?.key ? key?.key : key)">
+        <ng-container *ngIf="key?.icon; else noBackspace">
+          <ion-icon [name]="key?.icon"></ion-icon>
+        </ng-container>
+        <ng-template #noBackspace>
+          {{ key }}
+        </ng-template>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</div>

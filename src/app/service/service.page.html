@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar [color]="color">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light" data-cy="nabs">{{length}} {{title}}</ion-title>
+    <ion-buttons slot="end" data-cy="reload">
+      <ion-button (click)="list.load()">
+        <ion-icon name="refresh-outline" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-list-services #list [load]="load"></app-list-services>
+</ion-content>
+
+<ion-fab *ngIf="AC.stationIsValid" vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button color="success" (click)="scan()" [disabled]="!AC.stationIsValid || containStatusMov">
+    <ion-icon name="barcode-outline"></ion-icon>
+  </ion-fab-button>
+
+  <div (click)="checkStatus()">
+    <ion-fab-button (click)="openKeyboard('keyboard','')" [disabled]="!AC.stationIsValid || containStatusMov" data-cy="btn-create-service" [color]="color">
+      <ion-icon name="add" color="light"></ion-icon>
+    </ion-fab-button>
+  </div>
+</ion-fab>

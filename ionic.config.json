@@ -1,0 +1,8 @@
+{
+  "name": "logiface",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

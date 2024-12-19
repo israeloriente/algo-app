@@ -1,0 +1,9 @@
+<!-- <div> -->
+<input type="text" class="input-plate" [placeholder]="service.IsForeignPlate ? 'ET-621-CL' : '12-AB-34'" [value]="getPlate" readonly data-cy="input-plate-plate" />
+
+<ion-button fill="outline" size="small" color="dark" (click)="mudouMatriculaEstrangeira()" data-cy="button-plate-matricula-estrangeira">
+  {{ service.IsForeignPlate ? "Matrícula Portuguesa" : "Matrícula Estrangeira" }}
+</ion-button>
+<hr />
+<!-- <ion-button id="lastService" [disabled]="!hasLastService" fill="outline" color="dark" (click)="setLastService()"> Último Carro usado </ion-button> -->
+<app-keyboard data-cy="keyboard-plate" #keyboard_component (onClick)="setChar($event)" (response)="KeyboardResponse($event)" />

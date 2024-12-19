@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>App.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>F9E61E3184C9C58C3277F581977254EB579EE5BE</string>
+				<key>dateExpires</key>
+				<string>16/05/2022</string>
+				<key>type</key>
+				<string>Apple Distribution</string>
+			</dict>
+			<key>embeddedBinaries</key>
+			<array>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>F9E61E3184C9C58C3277F581977254EB579EE5BE</string>
+						<key>dateExpires</key>
+						<string>16/05/2022</string>
+						<key>type</key>
+						<string>Apple Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>Capacitor.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>TY5MP5U6AA</string>
+						<key>name</key>
+						<string>Israel Oriente</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>F9E61E3184C9C58C3277F581977254EB579EE5BE</string>
+						<key>dateExpires</key>
+						<string>16/05/2022</string>
+						<key>type</key>
+						<string>Apple Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>Cordova.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>TY5MP5U6AA</string>
+						<key>name</key>
+						<string>Israel Oriente</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>F9E61E3184C9C58C3277F581977254EB579EE5BE</string>
+						<key>dateExpires</key>
+						<string>16/05/2022</string>
+						<key>type</key>
+						<string>Apple Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>CordovaPlugins.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>TY5MP5U6AA</string>
+						<key>name</key>
+						<string>Israel Oriente</string>
+					</dict>
+				</dict>
+			</array>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>TY5MP5U6AA.ino.orientech.carroface</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>TY5MP5U6AA</string>
+				<key>get-task-allow</key>
+				<false/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>TY5MP5U6AA.ino.orientech.carroface</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>App.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>94a4c7cb-f374-478e-8015-96edd2759bd8</string>
+				<key>name</key>
+				<string>iOS Team Ad Hoc Provisioning Profile: ino.orientech.carroface</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>TY5MP5U6AA</string>
+				<key>name</key>
+				<string>Israel Oriente</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

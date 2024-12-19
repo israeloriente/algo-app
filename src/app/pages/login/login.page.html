@@ -1,0 +1,98 @@
+<ion-content>
+  <div *ngIf="!recovery" id="loginDiv" class="loginDiv">
+    <img src="../../assets/img/Logo.jpeg" class="logo" />
+
+    <br /><br /><br /><br />
+    <form [formGroup]="formLogin">
+      <ion-item>
+        <ion-label position="floating">Número de telemóvel ou e-mail</ion-label>
+        <ion-input #user formControlName="username" (keyup.enter)="pass.setFocus()" data-cy="username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Palavra-passe</ion-label>
+        <ion-input #pass type="password" formControlName="password" (keyup.enter)="login()" data-cy="password"></ion-input>
+      </ion-item>
+      <ion-button size="large" expand="block" color="dark" (click)="login()" data-cy="entrar" [disabled]="!formLogin.valid">
+      <div>Iniciar sessão</div>
+    </ion-button>
+    </form>
+    <h6 style="text-align: center" (click)="beginResetPassword()">Não sabe a palavra-passe?</h6>
+    <h6 *ngIf="!device.isPwa" style="text-align: center" (click)="global.goTo('redirect')">Instalar Aplicação</h6>
+  </div>
+
+  <div id="resetPasswordDiv" class="loginDiv" *ngIf="recovery">
+    <img src="../../assets/img/Logo.jpeg" class="logo" />
+
+    <h2>Recuperar palavra-passe</h2>
+    <br /><br /><br /><br />
+
+    <div *ngIf="resetPasswordStep == 1">
+      <form [formGroup]="formResetPasswordStep1">
+        <ion-item>
+          <ion-label position="floating">Número de telemóvel ou e-mail</ion-label>
+          <ion-input #user formControlName="username" (keyup.enter)="sendResetPasswordCode()" data-cy="username"></ion-input>
+        </ion-item>
+        <ion-label *ngIf="formResetPasswordStep1.controls['username'].errors?.Error" class="error-message">
+          {{formResetPasswordStep1.controls['username'].errors?.Error}}
+        </ion-label>
+        <ion-button size="large" expand="block" color="dark" (click)="sendResetPasswordCode()" style="margin-bottom: 2%" [disabled]="!formResetPasswordStep1.valid || processingFormResetPasswordStep1">
+          <div *ngIf="!processingFormResetPasswordStep1">Próximo</div>
+          <div *ngIf="processingFormResetPasswordStep1">A processar ... &nbsp;&nbsp;&nbsp;<ion-spinner class="button-spinner" name="crescent"></ion-spinner></div>
+        </ion-button>
+      </form>
+    </div>
+
+    <div *ngIf="resetPasswordStep == 2">
+      <form [formGroup]="formResetPasswordStep2">
+        <div>Insira o código de verificação que terá sido enviado para o seu e-mail e/ou para o número de telemóvel associado.</div>
+        <br /><br />
+        <ion-item>
+          <ion-label position="floating">Código de verificação</ion-label>
+          <ion-input #code type="tel" formControlName="resetCode" (keyup.enter)="isResetPasswordCodeValid()" data-cy="resetCode"></ion-input>
+        </ion-item>
+        <ion-label *ngIf="formResetPasswordStep2.controls['resetCode'].errors?.Error" class="error-message">
+          {{formResetPasswordStep2.controls['resetCode'].errors?.Error}}
+        </ion-label>
+        <ion-button size="large" expand="block" color="dark" (click)="isResetPasswordCodeValid()" style="margin-bottom: 2%" [disabled]="!formResetPasswordStep2.valid || processingFormResetPasswordStep2">
+          <div *ngIf="!processingFormResetPasswordStep2">Submeter código</div>
+          <div *ngIf="processingFormResetPasswordStep2">A processar ... &nbsp;&nbsp;&nbsp;<ion-spinner class="button-spinner" name="crescent"></ion-spinner></div>
+        </ion-button>
+      </form>
+    </div>
+
+    <div *ngIf="resetPasswordStep == 3">
+      <form [formGroup]="formResetPasswordStep3">
+        <div>Insira a sua nova palavra-passe.</div>
+        <br /><br />
+        <ion-item>
+          <ion-label position="floating">Palavra-passe</ion-label>
+          <ion-input #pass1 type="password" formControlName="password1" (keyup.enter)="pass2.setFocus()" data-cy="password1"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Repita a palavra-passe</ion-label>
+          <ion-input #pass2 type="password" formControlName="password2" (keyup.enter)="resetPassword()" data-cy="password2"></ion-input>
+        </ion-item>
+        <ion-label *ngIf="formResetPasswordStep3.controls['password2'].errors?.Error" class="error-message">
+          {{formResetPasswordStep3.controls['password2'].errors?.Error}}
+        </ion-label>
+        <ion-button size="large" expand="block" color="dark" (click)="resetPassword()" style="margin-bottom: 2%" [disabled]="!formResetPasswordStep3.valid || processingFormResetPasswordStep3">
+          <div *ngIf="!processingFormResetPasswordStep3">Atualizar palavra-passe</div>
+          <div *ngIf="processingFormResetPasswordStep3">A processar ... &nbsp;&nbsp;&nbsp;<ion-spinner class="button-spinner" name="crescent"></ion-spinner></div>
+        </ion-button>
+      </form>
+    </div>
+    <div *ngIf="resetPasswordStep == 4">
+      <div>A sua palavra-passe foi atualizada com sucesso.</div>
+    </div>
+
+    <ion-button size="" expand="block" color="dark" style="margin-bottom: 2%" (click)="recovery = false;">
+      <ion-icon slot="start" name="return-up-back-outline"></ion-icon>
+      <div>Voltar</div>
+    </ion-button>
+  </div>
+
+  <div class="footer">
+    <ion-label class="version">v. {{versionApp}}<span *ngIf="buildMode"> - {{buildMode}}</span></ion-label>
+    <ion-label class="copyright">&copy; STARFACE {{dateCopyright | date : 'YYYY'}}</ion-label> 
+  </div>
+</ion-content>

@@ -1,0 +1,86 @@
+<ion-col size="6" style="float: left" class="ion-no-padding">
+  <ion-item-divider color="dark">
+    <div class="centralizeTotal">Zona Origem</div>
+  </ion-item-divider>
+</ion-col>
+<ion-col size="6" style="float: left" class="ion-no-padding">
+  <ion-item-divider color="dark">
+    <div class="centralizeTotal">Zona Distino</div>
+  </ion-item-divider>
+</ion-col>
+
+<div style="position: absolute; top: 0%; width: 96%">
+  <ion-col size="6" style="float: left" class="ion-no-padding">
+    <ion-item-divider>
+      <ion-select
+        id="zona-origem"
+        class="centralizeTotal"
+        style="padding-left: 30px"
+        interface="action-sheet"
+        multiple="false"
+        [(ngModel)]="zoneOrigin"
+        (ionChange)="zoneChange('origin', zoneOrigin.Id || 0)"
+        placeholder="{{ zoneOrigin?.Label || 'Selecione' }}"
+        data-cy="zone-select"
+        tex
+      >
+        <ion-select-option [value]="z" *ngFor="let z of zones">{{ z.Label }}</ion-select-option>
+      </ion-select>
+    </ion-item-divider>
+  </ion-col>
+  <ion-col size="6" style="float: left" class="ion-no-padding">
+    <ion-item-divider>
+      <ion-select
+        id="zona-destino"
+        class="centralizeTotal"
+        style="padding-left: 30px"
+        interface="action-sheet"
+        multiple="false"
+        [(ngModel)]="zoneDestiny"
+        placeholder="{{ zoneDestiny?.Label || 'Selecione' }}"
+        (ionChange)="zoneChange('destiny', zoneDestiny.Id || 0)"
+        data-cy="zone-select"
+      >
+        <ion-select-option [value]="z" *ngFor="let z of zones">{{ z.Label }}</ion-select-option>
+      </ion-select>
+    </ion-item-divider>
+  </ion-col>
+
+  <ion-col size="6" style="float: left" class="ion-no-padding">
+    <ion-item-divider color="dark">
+      <div class="centralizeTotal">Onde você está?</div>
+    </ion-item-divider>
+  </ion-col>
+  <ion-col size="6" style="float: left" class="ion-no-padding">
+    <ion-item-divider color="dark">
+      <div class="centralizeTotal">Para onde vai?</div>
+    </ion-item-divider>
+  </ion-col>
+
+  <ion-col size="6" style="float: left">
+    <ion-content style="height: 50vh" data-cy="list-origem">
+      <ion-item
+        lines="none"
+        (click)="setOrigin(place.Id)"
+        *ngFor="let place of placesOrigin; let i = index"
+        [ngClass]="{ selected: service.StationOriginId == place.Id }"
+      >
+        <ion-label style="font-size: 10px">{{ place.Label }}</ion-label>
+      </ion-item>
+    </ion-content>
+    <hr style="margin: 1%" />
+  </ion-col>
+  <ion-col size="6" style="float: left">
+    <ion-content style="height: 50vh" data-cy="list-destino">
+      <ion-item
+        lines="none"
+        (click)="setDestiny(place.Id)"
+        *ngFor="let place of placesDestiny; let i = index"
+        [ngClass]="{ selected: service.StationDestinationId == place.Id }"
+      >
+        <ion-label style="font-size: 10px">{{ place.Label }}</ion-label>
+      </ion-item>
+    </ion-content>
+    <hr style="margin: 1%" />
+  </ion-col>
+</div>

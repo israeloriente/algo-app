@@ -1,0 +1,38 @@
+ion-button {
+  --background-hover: transparent;
+  --color-activated: rgb(255, 255, 255);
+  --background-activated: transparent;
+  font-weight: bold;
+}
+.buttonAlfabetic {
+  font-size: 20px;
+  height: 40px;
+}
+.buttonNumber {
+  font-size: 23px;
+  height: 60px;
+}
+
+.buttonObject {
+  font-size: 20px;
+  min-height: 40px;
+  max-height: 60px;
+  height: 40px;
+}
+
+@media (max-height: 600px) {
+  .buttonAlfabetic {
+    font-size: 15px;
+    height: 30px;
+  }
+  .buttonNumber {
+    font-size: 18px;
+    height: 50px;
+  }
+  .buttonObject {
+    font-size: 15px;
+    min-height: 30px;
+    max-height: 50px;
+    height: 30px;
+  }
+}

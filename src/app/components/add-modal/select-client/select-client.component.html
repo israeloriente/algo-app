@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-no-padding">Selecione o cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content style="height: 70vh">
+  <ion-item
+    button="true"
+    (click)="setClient(client)"
+    *ngFor="let client of clients; let i = index"
+    [ngClass]="{ selected: service.ClientId == client.Id }"
+  >
+    <ion-label style="font-size: 18px">{{ client.Label }}</ion-label>
+  </ion-item>
+</ion-content>

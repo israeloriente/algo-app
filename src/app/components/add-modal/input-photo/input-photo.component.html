@@ -1,0 +1,11 @@
+<div class="content">
+  <div class="description">
+    <p class="info">Reportar Danos</p>
+    <p class="aviso">Adicione antes de transferir a viatura</p>
+    <!-- Shows how many images there are -->
+    <p class="qtdImagens" *ngIf="images">{{ images }} image{{ images == 1 ? "m" : "ns" }}</p>
+    <ion-button fill="outline" data-cy="photo-open-camera-modal" (click)="openCameraModal()">{{
+      images ? "Gerir Images" : "Adicionar Imagens"
+    }}</ion-button>
+  </div>
+</div>

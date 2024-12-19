@@ -1,0 +1,15 @@
+p {
+  text-align: center;
+  font-size: 20px;
+  margin: 8% 1%;
+  span {
+    font-weight: bold;
+  }
+}
+ion-item {
+  width: 100%;
+  // "E" and "F" (nivelCombustivel)
+  ion-text {
+    font-size: 20px;
+  }
+}

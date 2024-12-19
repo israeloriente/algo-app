@@ -1,0 +1,295 @@
+<ion-header>
+  <ion-toolbar color="ajuda">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light">Ajuda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-button expand="block" color="dark" (click)="setOpenModal('checkin')">Como criar um check-in?</ion-button>
+  <ion-modal [isOpen]="modalType == 'checkin'">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar color="dark">
+          <ion-title>Criação Check-in</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpenModal()" isAbastecimentos="false">Fechar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <div class="transferes">
+          <!-- PART 1 -->
+          <h1>Como começar?</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/checkin_1.png" alt="" />
+          <!-- PART 2 -->
+          <h1>Escolha a estação em que está</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/checkin_2.png" alt="" />
+          <!-- PART 3 -->
+          <h1>Crie um novo item</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/checkin_3.png" alt="" />
+          <!-- KEYBOARD -->
+          <h1>Introduza a matrícula</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/transfers_4.png" alt="" />
+          <p>Se a matrícula não for portuguesa, selecione "Matrícula NÃO Portuguesa".</p>
+          <!-- PART 4 -->
+          <h1>Informações</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/checkin_4.png" alt="" />
+          <p>
+            🔴 1. Adicionar danos dos carros antes de serem preparados. <br />
+            <br />
+            🟡 2. Marcar se o carro tem avaria. <br />
+            <br />
+            🟢 3. Marcar se for preciso abastecer antes da preparação. <br />
+          </p>
+          <!-- PART 5 -->
+          <h1>Tipo do Serviço</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/checkin_5.png" alt="" />
+          <p>1. Tipo do serviço que será recomendado na hora da preparação. <br /></p>
+          <!-- Finalização -->
+          <h1>Finalização</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/transfers_8.png" alt="" />
+          <p>
+            🔴 1. Nome do responsável do serviço (condultor) <br />
+            <br />
+            🟢 2. Adicionar informação sobre o serviço <br />
+            <br />
+            Clique em finalizar para concluir o serviço".
+          </p>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-button expand="block" color="danger" (click)="setOpenModal('Transfer')">Como criar um Transfer?</ion-button>
+  <ion-modal [isOpen]="modalType == 'Transfer'">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar color="danger">
+          <ion-title>Como criar um Transfer?</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpenModal()">Fechar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <div class="transferes">
+          <h1>Como começar?</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/transfers_1.png" alt="" />
+          <!-- PART 2 -->
+          <h1>Escolha a estação em que está</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/transfers_2.png" alt="" />
+          <!-- PART 3 -->
+          <h1>Crie um novo item</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/transfers_3.png" alt="" />
+          <!-- KEYBOARD -->
+          <h1>Introduza a matrícula</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/transfers_4.png" alt="" />
+          <p>Se a matrícula não for portuguesa, selecione "Matrícula Estrangeira".</p>
+          <!-- PART 4 -->
+          <h1>Detalhes do item</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/transfers_5.png" alt="" />
+          <p>
+            🔴 1. Adicione imagens do movimento. <br />
+            <br />
+            🟡 2. Verifique se tem os acessórios na viatura. <br />
+            <br />
+            🟢 3. Informe o nível de combustível atual da viatura. <br />
+            <br />
+          </p>
+          <!-- PART Images -->
+          <h1>Como usar a câmera?</h1>
+          <img src="https://logiface-assets.s3.eu-west-3.amazonaws.com/tutorial-transferes/transferesCam1.png" alt="" />
+          <p>
+            🔴 1. Botão para tirar foto. <br />
+            <br />
+            🔴 2. Selecionar fotos a partir da galeria. <br />
+            <br />
+            🔴 3. Alterar entre câmera frontal e traseira. <br />
+          </p>
+          <h1>Tirar fotos</h1>
+          <img src="https://logiface-assets.s3.eu-west-3.amazonaws.com/tutorial-transferes/transferesCam2.png" alt="" />
+          <p>
+            🔴 1. Botão para fechar a câmera e enviar as fotos. <br />
+            <br />
+            🔴 2. Fotos já tiradas. <br />
+          </p>
+          <h1>Retirar fotos</h1>
+          <img src="https://logiface-assets.s3.eu-west-3.amazonaws.com/tutorial-transferes/transferesCam3.png" alt="" />
+          <p>
+            🔴 1. Botão para eliminar a foto selecionada. <br />
+            <br />
+            🔴 2. Fotos já tiradas. <br />
+          </p>
+          <h1>Deu erro?</h1>
+          <img src="https://logiface-assets.s3.eu-west-3.amazonaws.com/tutorial-transferes/errorFotos.png" alt="" />
+          <p>
+            Não tem problema, ao clicar no botão "Ok", as fotos que não foram enviadas serão guardadas no seu dispositivo. Certifique-se de as enviar
+            ao chefe de equipa.
+          </p>
+          <!-- PART 5 -->
+          <h1>Quilometragem</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/transfers_6.png" alt="" />
+          <p>1. Informe a quilometragem atual da viatura. <br /></p>
+          <!-- PART 6 -->
+          <h1>Origem e Destino</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/transfers_7.png" alt="" />
+          <p>
+            🟢 1. Local de origem (local de recolha). <br />
+            <br />
+            🔴 2. Destino (local onde vai deixar o veículo). <br />
+          </p>
+          <!-- PART 7 -->
+          <h1>Finalização</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/transfers_8.png" alt="" />
+          <p>
+            🔴 1. Nome do responsável do transferes (condultor) <br />
+            <br />
+            🟢 2. Adicionar informação sobre o transferes <br />
+          </p>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-button expand="block" color="tertiary" (click)="setOpenModal('Abastecimento')">Como criar um Abastecimento?</ion-button>
+  <ion-modal [isOpen]="modalType == 'Abastecimento'">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar color="tertiary">
+          <ion-title>Como criar um Abastecimento?</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpenModal()" isAbastecimentos="false">Fechar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <div class="transferes">
+          <!-- PART 1 -->
+          <h1>Como começar?</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/abastecimento_1.png" alt="" />
+          <!-- PART 2 -->
+          <h1>Escolha a estação em que está</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/abastecimento_2.png" alt="" />
+          <!-- PART 3 -->
+          <h1>Crie um novo item</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/abastecimento_3.png" alt="" />
+          <!-- KEYBOARD -->
+          <h1>Introduza a matrícula</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/transfers_4.png" alt="" />
+          <p>Se a matrícula não for portuguesa, selecione "Matrícula NÃO Portuguesa".</p>
+          <!-- PART 4 -->
+          <h1>Litros</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/abastecimento_4.png" alt="" />
+          <p>1. Total de litros abastecidos. <br /></p>
+          <!-- PART 5 -->
+          <h1>Tipo Combustível</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/abastecimento_5.png" alt="" />
+          <p>1. Tipo do combustível abastecido (Gasolina está predefinido). <br /></p>
+          <!-- Finalização -->
+          <h1>Finalização</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/transfers_8.png" alt="" />
+          <p>
+            🔴 1. Nome do responsável do serviço (condultor) <br />
+            <br />
+            🟢 2. Adicionar informação sobre o serviço <br />
+            <br />
+            Clique em finalizar para concluir o serviço".
+          </p>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-button expand="block" color="dark" (click)="setOpenModal('washed')">Como criar uma preparação?</ion-button>
+  <ion-modal [isOpen]="modalType == 'washed'">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar color="dark">
+          <ion-title>Criar uma Lavagem</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpenModal()">Fechar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <div class="transferes">
+          <!-- PART 1 -->
+          <h1>Como começar?</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/prep_1.png" alt="" />
+          <!-- PART 2 -->
+          <h1>Escolha a estação em que está</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/prep_2.png" alt="" />
+          <!-- PART 3 -->
+          <h1>Crie um novo item</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/prep_3.png" alt="" />
+          <!-- KEYBOARD -->
+          <h1>Introduza a matrícula</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/transfers_4.png" alt="" />
+          <p>Se a matrícula não for portuguesa, selecione "Matrícula NÃO Portuguesa".</p>
+          <!-- PART 4 -->
+          <h1>Escolha o tipo de serviço</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/prep_4.png" alt="" />
+          <p>1. Escolha o serviço (pode já ser predefinido pelo check-in). <br /></p>
+          <!-- Finalização -->
+          <h1>Finalização</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/transfers_8.png" alt="" />
+          <p>
+            🔴 1. Nome do responsável do serviço (condultor) <br />
+            <br />
+            🟢 2. Adicionar informação sobre o serviço <br />
+            <br />
+            Clique em finalizar para concluir o serviço".
+          </p>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-button expand="block" color="dark" (click)="setOpenModal('park')">Como criar um parqueamento?</ion-button>
+  <ion-modal [isOpen]="modalType == 'park'">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar color="dark">
+          <ion-title>Criar Parqueamento</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpenModal()">Fechar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <div class="transferes">
+          <!-- PART 1 -->
+          <h1>Como começar?</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/park_1.png" alt="" />
+          <!-- PART 2 -->
+          <h1>Escolha a estação em que está</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/park_2.png" alt="" />
+          <!-- PART 3 -->
+          <h1>Crie um novo item</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/park_3.png" alt="" />
+          <!-- KEYBOARD -->
+          <h1>Introduza a matrícula</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/transfers_4.png" alt="" />
+          <p>Se a matrícula não for portuguesa, selecione "Matrícula NÃO Portuguesa".</p>
+          <!-- PART 4 -->
+          <h1>Selecione a vaga onde o carro foi parqueado</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/park_4.png" alt="" />
+          <p>1. Você pode optar por "Lugar não especificado" caso tenha estacionado em um local não marcado <br /></p>
+          <!-- Finalização -->
+          <h1>Finalização</h1>
+          <img src="https://s3.eu-west-3.amazonaws.com/logiface-assets-v4.0/transfers_8.png" alt="" />
+          <p>
+            🔴 1. Nome do responsável do serviço (condultor) <br />
+            <br />
+            🟢 2. Adicionar informação sobre o serviço <br />
+            <br />
+            Clique em finalizar para concluir o serviço".
+          </p>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

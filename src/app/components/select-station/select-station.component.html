@@ -1,0 +1,52 @@
+<ion-content>
+  <ion-list-header> Onde você está hoje? </ion-list-header>
+  <br />
+  <ion-item>
+    <ion-toggle mode="ios" [(ngModel)]="showStationMultiClient" (ionChange)="stationMultiClientChanged($event)">Estação multi-cliente?</ion-toggle>
+  </ion-item>
+  <br />
+  <ion-item [disabled]="AppComponentUserZone">
+    <ion-select
+      [interface]="interfaceSelect"
+      multiple="false"
+      label="Zona"
+      placeholder="{{ zone?.Label || 'Selecione' }}"
+      [(ngModel)]="zone"
+      (ionChange)="zoneChange(); loadStations()"
+      (ionFocus)="zoneClicked()"
+      data-cy="zone-select"
+    >
+      <ion-select-option [value]="z" *ngFor="let z of zones">{{ z?.Label }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item *ngIf="!showStationMultiClient">
+    <ion-select
+      [interface]="interfaceSelect"
+      multiple="false"
+      label="Cliente"
+      placeholder="{{ client?.Label || 'Selecione' }}"
+      [(ngModel)]="client"
+      (ionChange)="clientChange(); loadStations()"
+      data-cy="client-select"
+    >
+      <ion-select-option [value]="c" *ngFor="let c of clients">{{ c?.Label }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <div (click)="checkStationList()">
+    <ion-item [disabled]="(!client && !showStationMultiClient) || !zone || !stations.length">
+      <ion-select
+        [interface]="interfaceSelect"
+        multiple="false"
+        label="Estação"
+        placeholder="{{ station?.Label || 'Selecione' }}"
+        [(ngModel)]="station"
+        (ionChange)="stationChange()"
+        data-cy="station-select"
+      >
+        <ion-select-option [value]="s" *ngFor="let s of stations">{{ s?.Label }} </ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+</ion-content>

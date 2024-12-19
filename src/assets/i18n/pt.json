@@ -1,0 +1,256 @@
+{
+  "global": {
+    "oops": "Oops!... Algo ccorreu mal!\nSe o problema persistir contacte o suporte técnico.",
+    "userAccountNotFound": "Não foi encontrada uma conta associada a este número de telemóvel ou e-mail.",
+    "invalidCode": "Código inválido.",
+    "passwordNoMatch": "A nova palavra-passe e a palavra-passe de confirmação não são iguais.",
+    "newPasswordRejected": "A palavra-passe submetida foi rejeitada.\nVerifique se utilizou pelo menos 1 carater numérico e 1 não alfanumérico.",
+    "button": {},
+    "simpleAlert": {
+      "loginFailed": {
+        "header": "Erro de autenticação!",
+        "message": "Por favor, verifique as suas credênciais e tente novamente."
+      },
+      "accountIsLockedOut": {
+        "header": "Erro de autenticação!",
+        "message": "A sua conta encontra-se bloqueada. Contacte o Suporte Técnico ou um Administrador."
+      },
+      "duplicatedPlate": {
+        "header": "Duplicação de matrícula",
+        "message": "A matrícula: ${} foi registada há menos de 1 hora."
+      },
+      "scan": {
+        "header": "Indisponível!",
+        "message": "Estamos trabalhando para isto."
+      },
+      "report": {
+        "header": "Ocorreu um erro!",
+        "message": "${}"
+      },
+      "updateTotalHours": {
+        "header": "Limite Excedido!",
+        "message": "Máximo de horas por dia é "
+      },
+      "unavailablePage": {
+        "header": "Página inexistente!",
+        "message": "A página não se encontra disponível na versão atual."
+      },
+      "kmRequired": {
+        "header": "Aviso!",
+        "message": "KM são obrigatórios."
+      },
+      "validationLitro": {
+        "header": "Demasiados litros!",
+        "message": "O limite é 100 mas inseriu "
+      },
+      "tooManyChars": {
+        "header": "Limite Atingido!",
+        "message": "Permitido apenas 9 caracteres!"
+      },
+      "separator": {
+        "header": "Será adicionado automaticamente!",
+        "message": "O '-' não precisa ser atribuído."
+      },
+      "invalidPlate": {
+        "header": "Matrícula Inválida!",
+        "message": "Deve conter letras e números."
+      },
+      "newPlace": {
+        "header": "Recebemos sua mensagem!",
+        "message": "Obrigado pela contribuição, vamos adicionar em breve 😜"
+      },
+      "newPlaceRetry": {
+        "header": "Escreva algo para nós!",
+        "message": "Precisamos das informações do novo local para adicionar em breve!"
+      },
+      "imageError": {
+        "header": "Erro ao enviar as imagens!",
+        "message": "As imagens serão guardadas no seu dispositivo."
+      },
+      "errorUpdate": {
+        "header": "Não foi possível atualizar alguns dados!",
+        "message": "${}"
+      },
+      "containStatusZero": {
+        "header": "Existe um serviço em andamento!",
+        "message": "Conclua o serviço para poder continuar."
+      },
+      "unauthorized": {
+        "header": "Sem Autenticação",
+        "message": "Faça login novamente."
+      },
+      "tooShortTime": {
+        "header": "Tempo insuficiente!",
+        "message": "Você está a tentar finalizar um serviço com menos de 1 minuto."
+      }
+    },
+    "confirmAlert": {
+      "willBeDisconnected": {
+        "title": "Aviso",
+        "message": "Você será desconectado",
+        "cancel": "Cancelar",
+        "ok": "Sair"
+      },
+      "authorizeCamera": {
+        "title": "Não temos autorização para usar sua câmera",
+        "message": "Precisamos que vá em Definições -> Permissões -> Permitir",
+        "cancel": "Fechar",
+        "ok": "Abrir Definições"
+      },
+      "wantOpenPwa": {
+        "title": "Função disponível apenas para a aplicação web (https://logiface.herokuapp.com/)",
+        "message": "⚠️ Abrir com Google Chrome browser ⚠️",
+        "cancel": "Voltar",
+        "ok": "Abrir"
+      },
+      "ignoredAccessory": {
+        "title": "Verificação de acessórios ignorada",
+        "message": "Todos acessórios estão em falta?",
+        "cancel": "Voltar",
+        "ok": "Sim, confirmo"
+      },
+      "newUpdates": {
+        "title": "Nova Atualização!",
+        "message": "Existe uma versão mais recente desta aplicação.",
+        "cancel": "Ignorar",
+        "ok": "Atualizar Agora"
+      },
+      "deleteItem": {
+        "title": "Operação irreversível",
+        "message": "Deseja remover este item?",
+        "cancel": "Cancelar",
+        "ok": "Remover"
+      },
+      "cancelModifications": {
+        "title": "Cancelar Modificações",
+        "message": "Deseja cancelar as modificações?",
+        "cancel": "Não",
+        "ok": "Sim"
+      },
+      "closeService": {
+        "title": "Você tem um serviço em aberto",
+        "message": "Deseja cancelar as modificações?",
+        "cancel": "Não",
+        "ok": "Sim"
+      },
+      "finishServiceSaveEndDate": {
+        "title": "Você gostaria de atualizar o horário de término?",
+        "message": "",
+        "cancel": "Não",
+        "ok": "Sim"
+      }
+    },
+    "toast": {
+      "initializeApp": {
+        "message": "Aplicação Atualizada!",
+        "time": 3000
+      },
+      "sync": {
+        "message": "Todos os dados atualizados!",
+        "time": 1000
+      },
+      "duplicateService": {
+        "message": "${} adicionada a menos de 1 hora!",
+        "time": 2000
+      },
+      "absRemoved": {
+        "message": "Abastecimento removido com sucesso!",
+        "time": 400
+      },
+      "denyRemoveAbs": {
+        "message": "Você não tem permissão para remover ",
+        "time": 5000
+      },
+      "improDeleted": {
+        "message": "Danos removidos!",
+        "time": 250
+      },
+      "carRemoved": {
+        "message": "Removeu com sucesso este ",
+        "time": 400
+      },
+      "denyRemoveCar": {
+        "message": "Você não tem permissão para remover este veículo!",
+        "time": 4000
+      },
+      "rendRemoved": {
+        "message": "Rendimento removido com sucesso!",
+        "time": 500
+      },
+      "dayAdded": {
+        "message": "Dia adicionado com sucesso!",
+        "time": 800
+      },
+      "objetivoUpdated": {
+        "message": "Atualizado Objetivo!",
+        "time": 200
+      },
+      "valorHoraUpdated": {
+        "message": "Atualizado Valor-Hora!",
+        "time": 400
+      },
+      "welcome": {
+        "message": "Olá ",
+        "time": 2000
+      },
+      "serviceCreated": {
+        "message": "Serviço adicionado com sucesso!",
+        "time": 400
+      },
+      "setLastMove": {
+        "message": "Nenhum movimento encontrado!",
+        "time": 2000
+      },
+      "importFile": {
+        "message": "Nenhum ficheiro selecionado!",
+        "time": 3000
+      },
+      "setChar": {
+        "message": "Limite Atingido, permite apenas 6 caracteres!",
+        "time": 300
+      },
+      "movRemoved": {
+        "message": "Movimento removido com sucesso!",
+        "time": 400
+      },
+      "serviceRemoved": {
+        "message": "${} removido com sucesso! ${}",
+        "time": 400
+      },
+      "denyRemoveMov": {
+        "message": "Você não tem permissão para remover ",
+        "time": 5000
+      },
+      "sixtQR": {
+        "message": "QRcode Sixt!",
+        "time": 100
+      },
+      "invalidPlate": {
+        "message": "Matrícula não corresponde!",
+        "time": 3500
+      },
+      "report": {
+        "header": "Ocorreu um erro!",
+        "message": "${}",
+        "time": 3500
+      },
+      "invalidSession": {
+        "message": "Sessão expirada. Faça login novamente!",
+        "time": 3500
+      },
+      "voidStationLookup": {
+        "message": "Estação não encontrada!",
+        "time": 2500
+      },
+      "online": {
+        "message": "Conexão Restabelecida!",
+        "time": 7000
+      },
+      "offline": {
+        "message": "Não está com acesso à  Internet!",
+        "time": 7000
+      }
+    },
+    "load": {}
+  }
+}

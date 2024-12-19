@@ -1,0 +1,10 @@
+<p class="title">Quantos litros foi aplicado?</p>
+<p class="litro" data-cy="p-km-km">{{ service.FuelQuantity }}<span> Litros</span></p>
+<app-keyboard
+  data-cy="keyboard-litro"
+  style="bottom: 0"
+  #keyboardComponent
+  (response)="KeyboardResponse($event)"
+  (onClick)="setLitro($event)"
+  [keyboard]="'numbers'"
+/>

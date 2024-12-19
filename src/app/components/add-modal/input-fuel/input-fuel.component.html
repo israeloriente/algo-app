@@ -1,0 +1,18 @@
+<div class="content">
+  <p>Qual o nível de combustível?</p>
+
+  <ion-item>
+    <ion-range
+      min="0"
+      max="8"
+      step="1"
+      snaps="true"
+      [value]="service.FuelLevel"
+      data-cy="input-nivel-combustivel"
+      (ionChange)="changeNivelCombustivel($event)"
+    >
+      <ion-text slot="start">E</ion-text>
+      <ion-text slot="end">F</ion-text>
+    </ion-range>
+  </ion-item>
+</div>
