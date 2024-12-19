@@ -39,12 +39,11 @@ export class HomePage {
     this.load = async function (): Promise<Service[]> {
       await GlobalService.Global.simpleLoading();
       if (GlobalService.Config.station)
-        DnnOperation.DnnService.stationsGetSettings(GlobalService.Config.station.Id).then(async ({AvailableOperations, ParkSettings} : any) => {
-          this.settings = Object.keys(AvailableOperations).reduce((acc, key) => {
-            acc[key.toLowerCase()] = AvailableOperations[key];
+        DnnOperation.DnnService.stationsGetSettings(GlobalService.Config.station.Id).then(async (settings) => {
+          this.settings = Object.keys(settings).reduce((acc, key) => {
+            acc[key.toLowerCase()] = settings[key];
             return acc;
           }, {});
-          GlobalService.Global.setStorage("parkSettings", ParkSettings);
           await GlobalService.Global.cancelLoad();
         });
       else await GlobalService.Global.cancelLoad();

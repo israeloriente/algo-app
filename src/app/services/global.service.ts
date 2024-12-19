@@ -67,11 +67,8 @@ export class GlobalService {
 
   /** Updates the date in the database. */
   newDay() {
-    let reloadApp: boolean = this.checkDay();
-    if (reloadApp) {
-      this.setStorage("dayToday", new Date().getDate());
-      document.location.reload();
-    }
+    this.setStorage("dayToday", new Date().getDate());
+    return [];
   }
 
   /** Replaces the first char of each word in a string with its upper case counterpart.
@@ -143,6 +140,7 @@ export class GlobalService {
   public resetStorage(key: string) {
     localStorage.removeItem(key);
   }
+
 
   /** Clean All Storage Data */
   public cleanStorage() {
