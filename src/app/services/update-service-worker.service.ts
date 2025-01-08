@@ -14,7 +14,7 @@ export class UpdateServiceWorkerService {
 			console.log(res);
 			console.log('Verificação de atualização executada.');
 		  });
-		}, 60000); // Verifica a cada 60 segundos
+		}, 3000); // Verifica a cada 60 segundos
 	  }
   }
 
