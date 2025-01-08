@@ -9,15 +9,13 @@ export class UpdateServiceWorkerService {
 
   public checkForUpdates(): void {
     if (this.updates.isEnabled) {
-      this.updates.versionUpdates.subscribe((event) => {
-        if (event.type === "VERSION_READY") {
-          console.log("Nova versão disponível! Aplicando atualização...");
-          this.updates.activateUpdate().then(() => {
-            this.reloadApp();
-          });
-        }
-      });
-    }
+		setInterval(() => {
+		  this.updates.checkForUpdate().then((res) => {
+			console.log(res);
+			console.log('Verificação de atualização executada.');
+		  });
+		}, 60000); // Verifica a cada 60 segundos
+	  }
   }
 
   public reloadApp(): void {
