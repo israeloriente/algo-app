@@ -9,7 +9,7 @@ import { register } from "swiper/element/bundle";
 import { DnnCore } from "./services/dnn.core.service";
 import { Station, User } from "@interfaces/dnnClasses";
 import { AWSS3Service } from "./services/aws.service";
-import { SwUpdate } from "@angular/service-worker";
+import { UpdateServiceWorkerService } from "./services/update-service-worker.service";
 
 /** App component. */
 register();
@@ -48,7 +48,7 @@ export class AppComponent {
     public menu: MenuController,
     public device: DeviceService,
     private translate: TranslateService,
-    private swUpdate: SwUpdate
+    private updateSW: UpdateServiceWorkerService
   ) {
     this.initializeApp();
     this.initTranslate();
@@ -62,14 +62,7 @@ export class AppComponent {
     this.platform.ready().then(async () => {
       // If the app is running as a PWA app
       // Verify updates
-      if (this.swUpdate.versionUpdates) {
-        this.swUpdate.versionUpdates.subscribe(async (event) => {
-          if (event.type == "VERSION_READY") {
-            Alert.simpleToast("global.toast.initializeApp");
-            document.location.reload();
-          }
-        });
-      }
+      this.updateSW.checkForUpdates();
       // Prevents from installing the app again
       window.addEventListener("beforeinstallprompt", (e) => {
         e.preventDefault();
@@ -140,7 +133,7 @@ export class AppComponent {
   }
 
   updateApp() {
-    document.location.reload();
+    this.updateSW.reloadApp();
   }
 
   detectInternetSignal() {

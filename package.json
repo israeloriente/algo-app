@@ -36,6 +36,7 @@
     "@angular/material": "^17.1.2",
     "@angular/platform-browser": "^18.2.13",
     "@angular/platform-browser-dynamic": "^18.2.13",
+    "@angular/pwa": "^0.5.3",
     "@angular/router": "^18.2.13",
     "@angular/service-worker": "^18.2.13",
     "@ionic/angular": "^8.4.1",
