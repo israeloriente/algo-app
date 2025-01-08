@@ -31,6 +31,9 @@ export class InputParkComponent implements OnValidation {
   get isValid(): boolean {
     return this.service.place != undefined && this.service.place?.length > 0;
   }
+  get isRestrictPark() {
+    return GlobalService.Config.parkSettings.RestrictParkValues;
+  }
 
   setValue(value: string) {
     if (value != "ABC" && this.service.place == "Não especificado") this.service.Plate = "";

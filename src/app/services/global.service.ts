@@ -30,6 +30,7 @@ export class GlobalService {
     zone: undefined,
     client: undefined,
     isMultiClient: false,
+    parkSettings: undefined,
   };
 
   /** Loads loading page. */
@@ -95,8 +96,7 @@ export class GlobalService {
       Alert.simpleToast("global.toast.sixtQR");
       let res = plate.split("|", 2);
       plate = res[1];
-      this.validatePlate(plate);
-      return plate;
+      return this.validatePlate(plate);
     }
     // If plate exists but no other conditions were met, then it's an invalid plate
     if (plate) Alert.simpleToast("global.toast.invalidPlate");

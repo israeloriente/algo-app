@@ -1,0 +1,12 @@
+<ion-list data-cy="park-list">
+  <ion-item
+    *ngFor="let item of list; index as i"
+    button="true"
+    (click)="selectItem(item)"
+    [ngClass]="{ selected: service.place == item }"
+    [attr.data-cy]="'item-park-list-' + i"
+  >
+    <ion-label>{{ item }}</ion-label>
+  </ion-item>
+  <ion-label *ngIf="list.length == 0">Lista vazia</ion-label>
+</ion-list>

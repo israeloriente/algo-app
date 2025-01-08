@@ -21,6 +21,7 @@ import { InputInfoComponent } from "./add-modal/input-info/input-info.component"
 import { SelectClientComponent } from "./add-modal/select-client/select-client.component";
 import { StopWatchComponent } from "./add-modal/stop-watch/stop-watch.component";
 import { InputSpecialServiceTypeComponent } from "./add-modal/input-special-service-type/input-special-service-type.component";
+import { InputParkListComponent } from "./add-modal/input-park-list/input-park-list.component";
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { InputSpecialServiceTypeComponent } from "./add-modal/input-special-serv
     OriginDestinyTransferComponent,
     InputTypeServiceComponent,
     InputParkComponent,
+    InputParkListComponent,
     SelectClientComponent,
     InputSpecialServiceTypeComponent,
     // end modals components

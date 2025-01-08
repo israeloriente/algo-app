@@ -1,12 +1,15 @@
 import { Client, Station, Zone } from "./dnnClasses";
 
-/** Interface to be used in AppComponent.
- *
- * @member {interface} station provides id about the station where the user is working.
- **/
+export interface ParkSettings {
+  RestrictParkValues: boolean;
+  ParkFrom: number;
+  ParkTo: number;
+}
+
 export interface Config {
   station: Station;
   zone: Zone;
   client: Client;
   isMultiClient: boolean;
+  parkSettings: ParkSettings;
 }

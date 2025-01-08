@@ -13,17 +13,25 @@ import { AppServiceWorkerModule } from "./serviceWorker.module";
 import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
+import { AddServiceModalPageModule } from "../service/add-service-modal/add-service-modal.module";
 
-@NgModule({ declarations: [AppComponent],
-    bootstrap: [AppComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA], imports: [CommonModule,
-        FormsModule,
-        BrowserModule,
-        IonicModule.forRoot(),
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        CameraModule,
-        AppTranslateModule,
-        AppHandleErrorModule,
-        AppServiceWorkerModule], providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, provideHttpClient(withInterceptorsFromDi())] })
+@NgModule({
+  declarations: [AppComponent],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [
+    CommonModule,
+    FormsModule,
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    CameraModule,
+    AppTranslateModule,
+    AppHandleErrorModule,
+    AppServiceWorkerModule,
+    AddServiceModalPageModule
+  ],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, provideHttpClient(withInterceptorsFromDi())],
+})
 export class AppModule {}

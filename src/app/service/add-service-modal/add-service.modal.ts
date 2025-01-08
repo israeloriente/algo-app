@@ -50,6 +50,7 @@ export class AddServiceModal implements OnValidation {
   constructor(private global: GlobalService, private params: NavParams, public modalAddPlate: ModalController, private ev: Events) {
     this.service = this.params.get("service");
     this.lastMov = this.params.get("lastMov");
+    if (!this.service.CarId && this.params.get("plate")) this.service.Plate = this.params.get("plate");
     this.indexSlide = this.service.Id == 0 ? 0 : GlobalService.Config.isMultiClient ? 2 : this.service.StartDate ? this.pages.length - 1 : 1;
 
     // Listen to the event that closes the modal.

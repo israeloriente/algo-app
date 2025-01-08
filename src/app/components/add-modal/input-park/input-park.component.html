@@ -1,14 +1,18 @@
 <p class="title">Qual o lugar estacionado?</p>
-<p class="litro" data-cy="p-park-park">{{ service.place }}<span> 🅿️</span></p>
-<app-keyboard
-  style="bottom: 0"
-  data-cy="keyboard-park"
-  #keyboardComponent
-  (response)="KeyboardResponse($event)"
-  (onClick)="setValue($event)"
-  [keyboard]="'numbers'"
-/>
+<div *ngIf="!isRestrictPark">
+  <p class="litro" data-cy="p-park-park">{{ service.place }}<span> 🅿️</span></p>
+  <app-keyboard
+    style="bottom: 0"
+    data-cy="keyboard-park"
+    #keyboardComponent
+    (response)="KeyboardResponse($event)"
+    (onClick)="setValue($event)"
+    [keyboard]="'numbers'"
+  />
 
-<ion-button (click)="service.place = 'Não especificado'" color="dark" fill="outline">Lugar não especificado</ion-button>
-<br />
-<ion-button (click)="service.place = ''" color="danger" size="small" fill="outline">Limpar</ion-button>
+  <ion-button (click)="service.place = 'Não especificado'" color="dark" fill="outline">Lugar não especificado</ion-button>
+  <br />
+  <ion-button (click)="service.place = ''" color="danger" size="small" fill="outline">Limpar</ion-button>
+</div>
+
+<app-input-park-list *ngIf="isRestrictPark"></app-input-park-list>
