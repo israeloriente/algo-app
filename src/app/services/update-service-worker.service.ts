@@ -10,12 +10,11 @@ export class UpdateServiceWorkerService {
   public checkForUpdates(): void {
     if (this.updates.isEnabled) {
       this.updates.versionUpdates.subscribe((event) => {
-        switch (event.type) {
-          case "VERSION_READY":
-            if (confirm("Uma nova versão está disponível. Deseja atualizar agora?")) {
-              this.reloadApp();
-            }
-            break;
+        if (event.type === "VERSION_READY") {
+          console.log("Nova versão disponível! Aplicando atualização...");
+          this.updates.activateUpdate().then(() => {
+            this.reloadApp();
+          });
         }
       });
     }
