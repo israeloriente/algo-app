@@ -116,7 +116,13 @@ export class FinishingComponent implements OnValidation {
     return this.service.className == "Movement";
   }
   get isSendingPhoto() {
-    return !(this.service.photoStatus == "complete") || InjectableService.updateServices.length > 0 || this.is_send;
+    return !(this.service.photoStatus == "complete");
+  }
+  get isSendingPhotoTEMP() {
+    return InjectableService.updateServices.length > 0;
+  }
+  get isSendingPhotoTEMP2() {
+    return this.is_send;
   }
   get pageStatus() {
     return this.controller.pageStatus;

@@ -39,5 +39,31 @@
       </span>
       <span *ngIf="isSendingPhoto"> Enviando dados... </span>
     </ion-button>
+    <ion-button
+      *ngIf="!isMov || service.StartDate"
+      expand="block"
+      (click)="endService()"
+      [disabled]="!isValid || isSendingPhotoTEMP"
+      data-cy="bt-finishing-finalize"
+    >
+      <ion-spinner *ngIf="isSendingPhotoTEMP"></ion-spinner>
+      <span *ngIf="!isSendingPhotoTEMP">
+        {{ pageStatus != 0 ? "INICIAR" : "FINALIZAR" }}
+      </span>
+      <span *ngIf="isSendingPhotoTEMP"> Enviando dados... </span>
+    </ion-button>
+    <ion-button
+      *ngIf="!isMov || service.StartDate"
+      expand="block"
+      (click)="endService()"
+      [disabled]="!isValid || isSendingPhotoTEMP2"
+      data-cy="bt-finishing-finalize"
+    >
+      <ion-spinner *ngIf="isSendingPhotoTEMP2"></ion-spinner>
+      <span *ngIf="!isSendingPhotoTEMP2">
+        {{ pageStatus != 0 ? "INICIAR" : "FINALIZAR" }}
+      </span>
+      <span *ngIf="isSendingPhotoTEMP2"> Enviando dados... </span>
+    </ion-button>
   </ion-footer>
 </div>

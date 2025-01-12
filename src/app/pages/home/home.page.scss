@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'Uniwars Rg Bold';
+  src: url('/assets/fonts/UniwarsRg-Bold.eot');
+  src: url('/assets/fonts/UniwarsRg-Bold.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/UniwarsRg-Bold.woff2') format('woff2'), url('/assets/fonts/UniwarsRg-Bold.woff') format('woff'), url('/assets/fonts/UniwarsRg-Bold.ttf') format('truetype'), url('/assets/fonts/UniwarsRg-Bold.svg#UniwarsRg-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+ion-title {
+  font-family: 'Uniwars Rg Bold';
+}
+
 .titleLabel {
   color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.54);
   font-size: 0.9rem;

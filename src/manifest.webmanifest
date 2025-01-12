@@ -55,5 +55,8 @@
       "type": "image/png",
       "purpose": "maskable any"
     }
-  ]
+  ],
+  "id": "/home",
+  "description": "Carface Mobile App",
+  "orientation": "portrait"
 }

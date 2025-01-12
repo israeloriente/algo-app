@@ -164,35 +164,36 @@ export class AWSS3Service {
    * @param objectKeys name of files
    * returns array of errors
    * **/
-  public static async uploadPhotos(bucketName: string, photos: Photo[], status: PhotoStatus): Promise<Photo[]> {
-    const imagesFail: Photo[] = [];
-    const images = [...photos];
-    for await (let photo of images) {
-      if (photo.objectKey.includes(bucketName)) continue;
-      try {
-        await AWSS3Service.uploadImageBase64(
-          bucketName,
-          photo.objectKey,
-          photo.base64
-        ).then((objectKey: string) => {
-          photo.objectKey = objectKey;
-          status.send++;
-        })
-          .catch(() => {
-            status.fail++;
-            imagesFail.push(photo);
-            photos.splice(photos.indexOf(photo), 1);
-          });
-      }
-      catch (e) {
-        status.fail++;
-        imagesFail.push(photo);
-        photos.splice(photos.indexOf(photo), 1);
-      };
-    }
+  // public static async uploadPhotos(bucketName: string, photos: Photo[], status: PhotoStatus): Promise<Photo[]> {
+  //   console.log("Enviando as imagens");
+  //   const imagesFail: Photo[] = [];
+  //   const images = [...photos];
+  //   for await (let photo of images) {
+  //     if (photo.objectKey.includes(bucketName)) continue;
+  //     try {
+  //       await AWSS3Service.uploadImageBase64(
+  //         bucketName,
+  //         photo.objectKey,
+  //         photo.base64
+  //       ).then((objectKey: string) => {
+  //         photo.objectKey = objectKey;
+  //         status.send++;
+  //       })
+  //         .catch(() => {
+  //           status.fail++;
+  //           imagesFail.push(photo);
+  //           photos.splice(photos.indexOf(photo), 1);
+  //         });
+  //     }
+  //     catch (e) {
+  //       status.fail++;
+  //       imagesFail.push(photo);
+  //       photos.splice(photos.indexOf(photo), 1);
+  //     };
+  //   }
 
-    status.send = photos.length;
-    status.fail = imagesFail.length;
-    return imagesFail;
-  }
+  //   status.send = photos.length;
+  //   status.fail = imagesFail.length;
+  //   return imagesFail;
+  // }
 }

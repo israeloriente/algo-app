@@ -113,10 +113,13 @@ export namespace DnnCore {
      */
     static async extendToken() {
       try {
+        let rToken = localStorage.getItem("renewal_token");
+        if (rToken == null) return false;
+
         const response = await axios.post(
           Constants.apiAuthorizationExtendToken,
           {
-            rtoken: localStorage.getItem("renewal_token"),
+            rtoken: rToken,
           },
           {
             headers: {
@@ -134,7 +137,7 @@ export namespace DnnCore {
         localStorage.setItem("renewal_token", data.RenewalToken);
         return true;
       } catch (error) {
-        console.error("Error extending token", error);
+        //console.error("Error extending token", error);
         return false;
       }
     }
@@ -161,7 +164,7 @@ export namespace DnnCore {
         const result = res.data;
         return typeof result === "boolean" ? result : false;
       } catch (error) {
-        console.error("Error checking user is authenticated", error);
+        //console.error("Error checking user is authenticated", error);
         return false;
       }
     }
