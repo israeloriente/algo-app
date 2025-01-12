@@ -62,7 +62,7 @@ export class PhotoAction {
     this.statusProgress = "progress";
     try {
       if (this.action == "add") {
-        // await this.compress();
+        await this.compress();
         await this.send();
       } else if (this.action == "remove") {
         await this.remove();
@@ -79,7 +79,6 @@ export class PhotoAction {
     const complete = this.check.qtd == this.check.actions.filter((e) => e.statusProgress == "complete").length;
     if (complete) {
       const fail = this.check.actions.filter((e) => e.status == "fail") || [];
-      new Report({ message: `${fail.length} imagens falharam` }, "class.services.PhotoAction.checkComplete.TEMP", false);
       if (fail.length > 0 && this.check.attempts <= PhotoAction.MAX_ATTEMPTS) {
         PhotoAction.executeAll(this.check, fail);
         return;
@@ -120,7 +119,6 @@ export class PhotoAction {
             this.url = objectKey;
             this.status = "success";
             this.action = "add";
-            new Report({ message: `Image sent: ${objectKey}` }, "class.services.PhotoAction.send", false);
           })
           .catch((e) => {
             new Report(e, "class.services.PhotoAction.send", false);
@@ -174,7 +172,6 @@ export class PhotoAction {
       attempts: 0,
       isComplete: false,
     };
-    new Report({ message: `Enviando ${imagesAdd.length} imagens` }, "class.services.PhotoAction.create", false);
     let id = 0;
     for await (let photo of imagesAdd) {
       actions.push(new PhotoAction(imageCompress, photo, bucketName, "add", check));
